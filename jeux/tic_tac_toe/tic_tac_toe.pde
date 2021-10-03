@@ -42,7 +42,14 @@ void initState() {
   cellWidth = (width - 2 * margin) / nr;
   cellHeight = (height - 2 * margin) / nr;
   isPlayerX = true;
-  cells = "         ";  // toutes les cellules sont vides (=> 9 espaces)
+  emptyCells();
+}
+
+/**
+ * empty the cells
+**/
+void emptyCells() {
+  cells = "         ";  // 9 spaces caracters
 }
 
 /**
@@ -134,6 +141,7 @@ void setCellChar(char c, int indexX, int indexY) {
  * dessine le damier
  **/
 void drawGame() {
+  background(0);
   drawHeader();
   drawBoard();
   drawCells();
