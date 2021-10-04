@@ -27,7 +27,7 @@ void setup() {
 void draw() {
 }
 
-// appalé par processing lorsque la souris est pressée
+// appelé par processing lorsque la souris est pressée
 void mousePressed() {
   // réinitialise l'application si la partie est terminée
   if (winner != '-') { //<>//
