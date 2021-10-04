@@ -1,13 +1,13 @@
 int cellWidth = 100;              // largeur des cases
 char player = 'X';                // player est "X" ou "O"
-String cells = "         ";       // string contenant des " " ou "X" ou "O"
+String cells = "---------";       // string contenant des " " ou "X" ou "O"
                                   // chaque caractère représente une case
                                   // voici les index des caractères
                                   // positionnés dans les cases correspondants
                                   //  0  1  2
                                   //  3  4  5
                                   //  6  7  8
-char winner = ' ';                // le gagnant "X" ou "O" ou " " s'il n'y a pas de gagnant
+char winner = '-';                // le gagnant "X" ou "O" ou " " s'il n'y a pas de gagnant
 
 // appelé par processing au démarrage
 void setup() {
@@ -30,8 +30,8 @@ void draw() {
 // appalé par processing lorsque la souris est pressée
 void mousePressed() {
   // réinitialise l'application si match nul
-  if (winner != ' ') {
-    winner = ' ';
+  if (winner != '-') { //<>//
+    winner = '-';
     background(0);
     stroke(255);
     // dessine les cases
@@ -47,7 +47,7 @@ void mousePressed() {
   int cellIndex = indexX + indexY * 3;    // index de la String cells
 
   // si la case est vide
-  if (cells.charAt(cellIndex) == ' ') {
+  if (cells.charAt(cellIndex) == '-') {
     // dessine la case
     textSize(80);
     fill(255);
@@ -57,7 +57,7 @@ void mousePressed() {
   }
   
   // vérifie le match nul
-  if (! cells.contains(" ")) {
+  if (! cells.contains("-")) {
     // affiche match nul
     fill(0, 0, 0, 180);
     rect(0, 100, width, 100);
@@ -69,16 +69,16 @@ void mousePressed() {
   // vérifie si un joueur a gagné
   for (int i = 0; i < 3; ++i) {
     // lignes
-    if (cells.charAt(i * 3) != ' ' && cells.charAt(i * 3) == cells.charAt(1 + i * 3) && cells.charAt(i * 3) == cells.charAt(2 + i * 3)) winner = cells.charAt(i * 3);
+    if (cells.charAt(i * 3) != '-' && cells.charAt(i * 3) == cells.charAt(1 + i * 3) && cells.charAt(i * 3) == cells.charAt(2 + i * 3)) winner = cells.charAt(i * 3);
     // colonnes
-    if (cells.charAt(i) != ' ' && cells.charAt(i) == cells.charAt(i + 3) && cells.charAt(i) == cells.charAt(i + 6)) winner = cells.charAt(i);
+    if (cells.charAt(i) != '-' && cells.charAt(i) == cells.charAt(i + 3) && cells.charAt(i) == cells.charAt(i + 6)) winner = cells.charAt(i);
   }
   // diagonales
-  if (cells.charAt(0) != ' ' && cells.charAt(0) == cells.charAt(5) && cells.charAt(0) == cells.charAt(8)) winner = cells.charAt(0);
-  if (cells.charAt(2) != ' ' && cells.charAt(2) == cells.charAt(4) && cells.charAt(2) == cells.charAt(6)) winner = cells.charAt(2);
+  if (cells.charAt(0) != '-' && cells.charAt(0) == cells.charAt(4) && cells.charAt(0) == cells.charAt(8)) winner = cells.charAt(0);
+  if (cells.charAt(2) != '-' && cells.charAt(2) == cells.charAt(4) && cells.charAt(2) == cells.charAt(6)) winner = cells.charAt(2);
 
   // si un joueur a gagné
-  if (winner != ' ') {
+  if (winner != '-') {
       // affiche le "nom" du gagant
       fill(0, 0, 0, 180);
       rect(0, 100, width, 100);
