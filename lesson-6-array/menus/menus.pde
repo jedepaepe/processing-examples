@@ -15,12 +15,14 @@ void setup() {
 
 void draw() {}
 
-String[] days = { "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" };
+// clavier         a          b         c                    d           e
+// index           0          1         2                    3           4
+String[] days = { "entrées", "soupes", "plats consistants", "desserts", "boissons" };
 
 void keyPressed() {
-  if (key >= '1' && key <= '7') {
+  if (key >= 'a' && key <= 'e') {
     background(0);
-    int index = key - '1';
+    int index = key - 'a';
     text(days[index], width / 2, height / 2 - 12);
   }
   println(key, (int) key, key - '1');
