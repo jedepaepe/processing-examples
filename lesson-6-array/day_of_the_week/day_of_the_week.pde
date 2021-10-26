@@ -4,6 +4,10 @@
 // ...
 // 7 => dimanche
 
+// clavier         1        2        3           4        5           6         7
+// index           0        1        2           3        4           5         6
+String[] days = { "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" };
+
 void setup() {
   size(600, 200);
   background(0);
@@ -14,8 +18,6 @@ void setup() {
 }
 
 void draw() {}
-
-String[] days = { "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche" };
 
 void keyPressed() {
   if (key >= '1' && key <= '7') {
