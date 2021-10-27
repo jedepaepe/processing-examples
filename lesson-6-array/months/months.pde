@@ -14,9 +14,9 @@ void setup() {
 }
 
 void draw() {}
-//                 1     2     3     4     5     6     7     8     9     a     b     c  
-//                 0     1     2     3     4     5     6     7     8     9     10    11
-String[] months = { "ja", "fe", "ma", "av", "ma", "ju", "ju", "ao", "se", "oc", "no", "de" };
+//                   1      2      3      4      5      6      7      8      9      a      b      c  
+//                   0      1      2      3      4      5      6      7      8      9      10     11
+String[] months = { "jan", "fev", "mar", "avr", "mai", "jui", "jui", "aou", "sep", "oct", "nov", "dec" };
 
 void keyPressed() {
   if (key >= '1' && key <= '9') {
