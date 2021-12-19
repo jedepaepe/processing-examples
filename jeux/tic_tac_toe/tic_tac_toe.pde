@@ -93,8 +93,6 @@ boolean hasWin(boolean isPlayerX) {
     if (getCellChar(i, 0) == player && getCellChar(i, 1) == player && getCellChar(i, 2) == player) return true;
   }
   // diagonales
-  if (cells.charAt(0) == 'X' && cells.charAt(4) == 'X' && cells.charAt(8) == 'X') return true;
-  if (cells.charAt(2) == 'X' && cells.charAt(4) == 'X' && cells.charAt(6) == 'X') return true;
   if (getCellChar(0, 0) == player && getCellChar(1, 1) == player && getCellChar(2, 2) == player) return true;
   if (getCellChar(0, 2) == player && getCellChar(1, 1) == player && getCellChar(2, 0) == player) return true;
   return false;
